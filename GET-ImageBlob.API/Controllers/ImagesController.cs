@@ -14,6 +14,13 @@ public class ImagesController : ControllerBase
         _imageService = imageService;
     }
 
+    [HttpPost]
+    public async Task<IActionResult> UploadImageBlob([FromQuery]string URL)
+    {
+        await _imageService.UploadImageBlob(URL, HttpContext.RequestAborted);
+        return Ok();
+    }
+
     [HttpGet]
     public async Task<IActionResult> GetImage()
     {
