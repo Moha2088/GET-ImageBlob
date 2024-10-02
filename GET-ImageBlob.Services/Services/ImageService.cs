@@ -5,6 +5,7 @@ using Azure.Storage.Blobs.Models;
 using GET_ImageBlob.Services.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Serilog;
 using System.Text;
 
 namespace GET_ImageBlob.Services.Services;
@@ -14,11 +15,9 @@ public class ImageService : IImageService
     private readonly BlobServiceClient _blobServiceClient;
     private readonly string _storageConnectionString;
     private readonly string _blobContainer;
-    private readonly ILogger<ImageService> _logger;
     
-    public ImageService(ILogger<ImageService> logger) 
+    public ImageService() 
     {
-        _logger = logger;
         IConfiguration config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
         _storageConnectionString = config.GetSection("AzureCredentials:StorageConnectionString").Value!;
         _blobContainer = config.GetSection("AzureCredentials:BlobContainerName").Value!;
@@ -29,23 +28,23 @@ public class ImageService : IImageService
     {
         BlobContainerClient blobContainerClient = _blobServiceClient.GetBlobContainerClient(_blobContainer);
         BlobClient blobClient = blobContainerClient.GetBlobClient(localFilePath);
-        
+        Response<BlobContentInfo>? uploadedBlobState = null;
 
         using var stream = new MemoryStream(Encoding.UTF8.GetBytes(localFilePath));
 
         try
         {
-            await blobClient.UploadAsync(stream, overwrite: true, cancellationToken);
+            uploadedBlobState = await blobClient.UploadAsync(stream, overwrite: true, cancellationToken);
         }
 
         catch (RequestFailedException e) 
-        {   
-            _logger.LogWarning($"Error uploading blob to storage:\nError Message: {e.ToString()}");
+        {
+            Log.Information("Error uploading blob: {@Error}", e.ToString());
         }
 
         finally
         {
-            _logger.LogInformation("Upload finished");
+            Log.Information("Upload finished: {@State}", uploadedBlobState);
         }
     }
 
@@ -56,6 +55,7 @@ public class ImageService : IImageService
         var randomBlobIdx = random.Next(0, blobContainerClient.GetBlobs().Count() - 1);
         var randomBlob = blobContainerClient.GetBlobs().ToList()[randomBlobIdx].Name;
         string imageURL = $"https://{_blobServiceClient.AccountName}.blob.core.windows.net/{_blobContainer}/{randomBlob}";
+        Log.Information("Retrieved URL: {@URL}", imageURL);
         return Task.FromResult(imageURL);
     }
 }
