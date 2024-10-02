@@ -1,6 +1,7 @@
 
 using GET_ImageBlob.Services.Services;
 using GET_ImageBlob.Services.Services.Interfaces;
+using Serilog;
 
 namespace GET_ImageBlob.API;
 
@@ -13,6 +14,11 @@ public class Program
         // Add services to the container.
 
         builder.Services.AddScoped<IImageService, ImageService>();
+
+        builder.Host.UseSerilog((ctx, cfg) =>
+        cfg.MinimumLevel.Debug()
+        .WriteTo.Console()
+        );
 
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
