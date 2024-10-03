@@ -27,10 +27,10 @@ public class ImageService : IImageService
     public async Task UploadImageBlob(string localFilePath, CancellationToken cancellationToken)
     {
         BlobContainerClient blobContainerClient = _blobServiceClient.GetBlobContainerClient(_blobContainer);
-        BlobClient blobClient = blobContainerClient.GetBlobClient(localFilePath);
+        string fileName = Path.GetFileName(localFilePath);
+        BlobClient blobClient = blobContainerClient.GetBlobClient(fileName);
         Response<BlobContentInfo>? uploadedBlobState = null;
-
-        using var stream = new MemoryStream(Encoding.UTF8.GetBytes(localFilePath));
+        FileStream stream = File.OpenRead(localFilePath);
 
         try
         {
@@ -52,7 +52,7 @@ public class ImageService : IImageService
     {
         Random random = new Random();
         BlobContainerClient blobContainerClient = _blobServiceClient.GetBlobContainerClient(_blobContainer);
-        var randomBlobIdx = random.Next(0, blobContainerClient.GetBlobs().Count() - 1);
+        var randomBlobIdx = random.Next(0, blobContainerClient.GetBlobs().Count());
         var randomBlob = blobContainerClient.GetBlobs().ToList()[randomBlobIdx].Name;
         string imageURL = $"https://{_blobServiceClient.AccountName}.blob.core.windows.net/{_blobContainer}/{randomBlob}";
         Log.Information("Retrieved URL: {@URL}", imageURL);
