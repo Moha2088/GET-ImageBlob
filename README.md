@@ -1,3 +1,3 @@
-# GET-ImageBlob
+# ImageUploader
 
-Blob Upload/Retrieval exercise
+API that interacts with an Azure Blob Storage, which can upload and retrieve files in the cloud
