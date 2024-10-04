@@ -47,17 +47,19 @@ public class ImageService : IImageService
             Log.Information("Upload finished: {@State}", uploadedBlobState);
         }
     }
-
+        
     public async Task UploadImageBlobsBulk(string folderPath, CancellationToken cancellationToken)
     {
         BlobContainerClient blobContainerClient = _blobServiceClient.GetBlobContainerClient(_blobContainer);
 
-
         foreach(var file in Directory.GetFiles(folderPath))
         {
-            BlobClient blobClient = blobContainerClient.GetBlobClient(file);
-            FileStream stream = File.OpenRead(file);
-            await blobClient.UploadAsync(stream, overwrite: true, cancellationToken);
+            if (Path.GetFileName(file).EndsWith("jpg") || Path.GetFileName(file).EndsWith("png"))
+            {
+                BlobClient blobClient = blobContainerClient.GetBlobClient(file);
+                FileStream stream = File.OpenRead(file);
+                await blobClient.UploadAsync(stream, overwrite: true, cancellationToken);
+            }
         }
     }
 
