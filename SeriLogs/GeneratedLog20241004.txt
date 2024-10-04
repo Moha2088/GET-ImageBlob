@@ -2081,3 +2081,196 @@ System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport 
 04-10-2024 13:22:52.974 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7048/_framework/aspnetcore-browser-refresh.js - null null
 04-10-2024 13:22:52.980 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7048/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 7.029ms
 04-10-2024 13:22:52.989 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7048/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.7838ms
+04-10-2024 13:41:55.579 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+04-10-2024 13:41:55.667 +02:00 [DBG] Hosting starting
+04-10-2024 13:41:55.853 +02:00 [INF] Now listening on: https://localhost:7048
+04-10-2024 13:41:55.855 +02:00 [INF] Now listening on: http://localhost:5054
+04-10-2024 13:41:55.856 +02:00 [DBG] Loaded hosting startup assembly GET-ImageBlob.API
+04-10-2024 13:41:55.857 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+04-10-2024 13:41:55.858 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+04-10-2024 13:41:55.858 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+04-10-2024 13:41:55.899 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+04-10-2024 13:41:55.902 +02:00 [INF] Hosting environment: Development
+04-10-2024 13:41:55.902 +02:00 [INF] Content root path: C:\Users\MohamedShil\Desktop\ImageUploader\GET-ImageBlob.API
+04-10-2024 13:41:55.903 +02:00 [DBG] Hosting started
+04-10-2024 13:41:56.221 +02:00 [DBG] Connection id "0HN74D66ADOKU" accepted.
+04-10-2024 13:41:56.224 +02:00 [DBG] Connection id "0HN74D66ADOKU" started.
+04-10-2024 13:41:56.231 +02:00 [DBG] Connection id "0HN74D66ADOKV" accepted.
+04-10-2024 13:41:56.232 +02:00 [DBG] Connection id "0HN74D66ADOKV" started.
+04-10-2024 13:41:56.247 +02:00 [DBG] Connection id "0HN74D66ADOKV" received FIN.
+04-10-2024 13:41:56.247 +02:00 [DBG] Connection id "0HN74D66ADOKU" received FIN.
+04-10-2024 13:41:56.255 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+04-10-2024 13:41:56.255 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+04-10-2024 13:41:56.290 +02:00 [DBG] Connection id "0HN74D66ADOKU" stopped.
+04-10-2024 13:41:56.290 +02:00 [DBG] Connection id "0HN74D66ADOKV" stopped.
+04-10-2024 13:41:56.294 +02:00 [DBG] Connection id "0HN74D66ADOKV" sending FIN because: "The Socket transport's send loop completed gracefully."
+04-10-2024 13:41:56.294 +02:00 [DBG] Connection id "0HN74D66ADOKU" sending FIN because: "The Socket transport's send loop completed gracefully."
+04-10-2024 13:41:56.495 +02:00 [DBG] Connection id "0HN74D66ADOL0" accepted.
+04-10-2024 13:41:56.497 +02:00 [DBG] Connection id "0HN74D66ADOL0" started.
+04-10-2024 13:41:56.539 +02:00 [DBG] Connection 0HN74D66ADOL0 established using the following protocol: "Tls13"
+04-10-2024 13:41:56.617 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7048/swagger/index.html - null null
+04-10-2024 13:41:56.771 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+04-10-2024 13:41:56.797 +02:00 [DBG] No candidates found for the request path '/swagger/index.html'
+04-10-2024 13:41:56.800 +02:00 [DBG] Request did not match any endpoints
+04-10-2024 13:41:56.905 +02:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+04-10-2024 13:41:56.907 +02:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+04-10-2024 13:41:56.928 +02:00 [DBG] Response markup was updated to include Browser Link script injection.
+04-10-2024 13:41:56.931 +02:00 [DBG] Response markup was updated to include browser refresh script injection.
+04-10-2024 13:41:56.939 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7048/swagger/index.html - 200 null text/html;charset=utf-8 328.3551ms
+04-10-2024 13:41:56.972 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7048/_framework/aspnetcore-browser-refresh.js - null null
+04-10-2024 13:41:56.993 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7048/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 20.5815ms
+04-10-2024 13:41:56.993 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7048/_vs/browserLink - null null
+04-10-2024 13:41:57.072 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7048/_vs/browserLink - 200 null text/javascript; charset=UTF-8 78.5741ms
+04-10-2024 13:41:57.569 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7048/swagger/v1/swagger.json - null null
+04-10-2024 13:41:57.573 +02:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+04-10-2024 13:41:57.574 +02:00 [DBG] Request did not match any endpoints
+04-10-2024 13:41:57.698 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7048/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 130.2822ms
+04-10-2024 13:42:48.469 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7048/api/Images/bulk/C:\Users\MohamedShil\Desktop\duck.gif - null 0
+04-10-2024 13:42:48.474 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Images/bulk/C:\Users\MohamedShil\Desktop\duck.gif'
+04-10-2024 13:42:48.477 +02:00 [DBG] Endpoint 'GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlobsBulk (GET-ImageBlob.API)' with route pattern 'api/Images/bulk/{folderPath}' is valid for the request path '/api/Images/bulk/C:\Users\MohamedShil\Desktop\duck.gif'
+04-10-2024 13:42:48.478 +02:00 [DBG] Request matched endpoint 'GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlobsBulk (GET-ImageBlob.API)'
+04-10-2024 13:42:48.480 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+04-10-2024 13:42:48.482 +02:00 [INF] Executing endpoint 'GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlobsBulk (GET-ImageBlob.API)'
+04-10-2024 13:42:48.498 +02:00 [INF] Route matched with {action = "UploadImageBlobsBulk", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadImageBlobsBulk(System.String) on controller GET_ImageBlob.API.Controllers.ImagesController (GET-ImageBlob.API).
+04-10-2024 13:42:48.500 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+04-10-2024 13:42:48.502 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+04-10-2024 13:42:48.503 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+04-10-2024 13:42:48.505 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+04-10-2024 13:42:48.506 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+04-10-2024 13:42:48.508 +02:00 [DBG] Executing controller factory for controller GET_ImageBlob.API.Controllers.ImagesController (GET-ImageBlob.API)
+04-10-2024 13:42:48.557 +02:00 [DBG] Executed controller factory for controller GET_ImageBlob.API.Controllers.ImagesController (GET-ImageBlob.API)
+04-10-2024 13:42:48.567 +02:00 [DBG] Attempting to bind parameter 'folderPath' of type 'System.String' ...
+04-10-2024 13:42:48.569 +02:00 [DBG] Attempting to bind parameter 'folderPath' of type 'System.String' using the name 'folderPath' in request data ...
+04-10-2024 13:42:48.571 +02:00 [DBG] Done attempting to bind parameter 'folderPath' of type 'System.String'.
+04-10-2024 13:42:48.572 +02:00 [DBG] Done attempting to bind parameter 'folderPath' of type 'System.String'.
+04-10-2024 13:42:48.572 +02:00 [DBG] Attempting to validate the bound parameter 'folderPath' of type 'System.String' ...
+04-10-2024 13:42:48.576 +02:00 [DBG] Done attempting to validate the bound parameter 'folderPath' of type 'System.String'.
+04-10-2024 13:42:48.667 +02:00 [INF] Executed action GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlobsBulk (GET-ImageBlob.API) in 158.4431ms
+04-10-2024 13:42:48.670 +02:00 [INF] Executed endpoint 'GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlobsBulk (GET-ImageBlob.API)'
+04-10-2024 13:42:48.672 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.IO.IOException: Forkert parameter. : 'C:\Users\MohamedShil\Desktop\duck.gif'
+   at System.IO.Enumeration.FileSystemEnumerator`1.FindNextEntry()
+   at System.IO.Enumeration.FileSystemEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.IO.Directory.GetFiles(String path, String searchPattern, EnumerationOptions enumerationOptions)
+   at GET_ImageBlob.Services.Services.ImageService.UploadImageBlobsBulk(String folderPath, CancellationToken cancellationToken) in C:\Users\MohamedShil\Desktop\ImageUploader\GET-ImageBlob.Services\Services\ImageService.cs:line 55
+   at GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlobsBulk(String folderPath) in C:\Users\MohamedShil\Desktop\ImageUploader\GET-ImageBlob.API\Controllers\ImagesController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+04-10-2024 13:42:48.697 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7048/api/Images/bulk/C:\Users\MohamedShil\Desktop\duck.gif - 500 null text/plain; charset=utf-8 232.5072ms
+04-10-2024 13:45:17.538 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7048/api/Images/single/C:\Users\MohamedShil\Desktop\duck.gif - null 0
+04-10-2024 13:45:17.547 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Images/single/C:\Users\MohamedShil\Desktop\duck.gif'
+04-10-2024 13:45:17.548 +02:00 [DBG] Endpoint 'GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlob (GET-ImageBlob.API)' with route pattern 'api/Images/single/{localFilePath}' is valid for the request path '/api/Images/single/C:\Users\MohamedShil\Desktop\duck.gif'
+04-10-2024 13:45:17.550 +02:00 [DBG] Request matched endpoint 'GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlob (GET-ImageBlob.API)'
+04-10-2024 13:45:17.551 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+04-10-2024 13:45:17.551 +02:00 [INF] Executing endpoint 'GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlob (GET-ImageBlob.API)'
+04-10-2024 13:45:17.556 +02:00 [INF] Route matched with {action = "UploadImageBlob", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadImageBlob(System.String) on controller GET_ImageBlob.API.Controllers.ImagesController (GET-ImageBlob.API).
+04-10-2024 13:45:17.557 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+04-10-2024 13:45:17.558 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+04-10-2024 13:45:17.559 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+04-10-2024 13:45:17.560 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+04-10-2024 13:45:17.561 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+04-10-2024 13:45:17.562 +02:00 [DBG] Executing controller factory for controller GET_ImageBlob.API.Controllers.ImagesController (GET-ImageBlob.API)
+04-10-2024 13:45:17.563 +02:00 [DBG] Executed controller factory for controller GET_ImageBlob.API.Controllers.ImagesController (GET-ImageBlob.API)
+04-10-2024 13:45:17.564 +02:00 [DBG] Attempting to bind parameter 'localFilePath' of type 'System.String' ...
+04-10-2024 13:45:17.565 +02:00 [DBG] Attempting to bind parameter 'localFilePath' of type 'System.String' using the name 'localFilePath' in request data ...
+04-10-2024 13:45:17.566 +02:00 [DBG] Done attempting to bind parameter 'localFilePath' of type 'System.String'.
+04-10-2024 13:45:17.567 +02:00 [DBG] Done attempting to bind parameter 'localFilePath' of type 'System.String'.
+04-10-2024 13:45:17.568 +02:00 [DBG] Attempting to validate the bound parameter 'localFilePath' of type 'System.String' ...
+04-10-2024 13:45:17.569 +02:00 [DBG] Done attempting to validate the bound parameter 'localFilePath' of type 'System.String'.
+04-10-2024 13:45:17.929 +02:00 [INF] Upload finished: {"Value":{"ETag":{"$type":"ETag"},"LastModified":"2024-10-04T11:45:17.0000000+00:00","ContentHash":"AC53A284843476D57AA3495F07A1C6A9","VersionId":null,"EncryptionKeySha256":null,"EncryptionScope":null,"BlobSequenceNumber":0,"$type":"BlobContentInfo"},"HasValue":true,"$type":"ValueResponse`1"}
+04-10-2024 13:45:17.949 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+04-10-2024 13:45:17.950 +02:00 [INF] Executed action GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlob (GET-ImageBlob.API) in 388.0482ms
+04-10-2024 13:45:17.951 +02:00 [INF] Executed endpoint 'GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlob (GET-ImageBlob.API)'
+04-10-2024 13:45:17.953 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7048/api/Images/single/C:\Users\MohamedShil\Desktop\duck.gif - 200 0 null 415.3939ms
+04-10-2024 14:11:25.036 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+04-10-2024 14:11:25.115 +02:00 [DBG] Hosting starting
+04-10-2024 14:11:25.305 +02:00 [INF] Now listening on: https://localhost:7048
+04-10-2024 14:11:25.307 +02:00 [INF] Now listening on: http://localhost:5054
+04-10-2024 14:11:25.308 +02:00 [DBG] Loaded hosting startup assembly GET-ImageBlob.API
+04-10-2024 14:11:25.309 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+04-10-2024 14:11:25.309 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+04-10-2024 14:11:25.310 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+04-10-2024 14:11:25.360 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+04-10-2024 14:11:25.361 +02:00 [INF] Hosting environment: Development
+04-10-2024 14:11:25.362 +02:00 [INF] Content root path: C:\Users\MohamedShil\Desktop\ImageUploader\GET-ImageBlob.API
+04-10-2024 14:11:25.362 +02:00 [DBG] Hosting started
+04-10-2024 14:11:25.711 +02:00 [DBG] Connection id "0HN74DMLLJ5GU" accepted.
+04-10-2024 14:11:25.713 +02:00 [DBG] Connection id "0HN74DMLLJ5GU" started.
+04-10-2024 14:11:25.753 +02:00 [DBG] Connection id "0HN74DMLLJ5GU" received FIN.
+04-10-2024 14:11:25.760 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+04-10-2024 14:11:25.829 +02:00 [DBG] Connection id "0HN74DMLLJ5GU" stopped.
+04-10-2024 14:11:25.835 +02:00 [DBG] Connection id "0HN74DMLLJ5GU" sending FIN because: "The Socket transport's send loop completed gracefully."
+04-10-2024 14:11:26.069 +02:00 [DBG] Connection id "0HN74DMLLJ5GV" accepted.
+04-10-2024 14:11:26.071 +02:00 [DBG] Connection id "0HN74DMLLJ5GV" started.
+04-10-2024 14:11:26.121 +02:00 [DBG] Connection 0HN74DMLLJ5GV established using the following protocol: "Tls13"
+04-10-2024 14:11:26.194 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7048/swagger/index.html - null null
+04-10-2024 14:11:26.301 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+04-10-2024 14:11:26.319 +02:00 [DBG] No candidates found for the request path '/swagger/index.html'
+04-10-2024 14:11:26.322 +02:00 [DBG] Request did not match any endpoints
+04-10-2024 14:11:26.416 +02:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+04-10-2024 14:11:26.419 +02:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+04-10-2024 14:11:26.441 +02:00 [DBG] Response markup was updated to include Browser Link script injection.
+04-10-2024 14:11:26.442 +02:00 [DBG] Response markup was updated to include browser refresh script injection.
+04-10-2024 14:11:26.451 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7048/swagger/index.html - 200 null text/html;charset=utf-8 261.5932ms
+04-10-2024 14:11:26.506 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7048/_framework/aspnetcore-browser-refresh.js - null null
+04-10-2024 14:11:26.518 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7048/_framework/aspnetcore-browser-refresh.js - 200 13770 application/javascript; charset=utf-8 12.134ms
+04-10-2024 14:11:26.524 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7048/_vs/browserLink - null null
+04-10-2024 14:11:26.597 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7048/_vs/browserLink - 200 null text/javascript; charset=UTF-8 73.5821ms
+04-10-2024 14:11:27.097 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7048/swagger/v1/swagger.json - null null
+04-10-2024 14:11:27.101 +02:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+04-10-2024 14:11:27.103 +02:00 [DBG] Request did not match any endpoints
+04-10-2024 14:11:27.242 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7048/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 145.5979ms
+04-10-2024 14:13:18.712 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7048/api/Images/bulk/C:\Users\MohamedShil\Desktop\Test - null 0
+04-10-2024 14:13:18.719 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Images/bulk/C:\Users\MohamedShil\Desktop\Test'
+04-10-2024 14:13:18.721 +02:00 [DBG] Endpoint 'GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlobsBulk (GET-ImageBlob.API)' with route pattern 'api/Images/bulk/{folderPath}' is valid for the request path '/api/Images/bulk/C:\Users\MohamedShil\Desktop\Test'
+04-10-2024 14:13:18.723 +02:00 [DBG] Request matched endpoint 'GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlobsBulk (GET-ImageBlob.API)'
+04-10-2024 14:13:18.727 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+04-10-2024 14:13:18.729 +02:00 [INF] Executing endpoint 'GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlobsBulk (GET-ImageBlob.API)'
+04-10-2024 14:13:18.745 +02:00 [INF] Route matched with {action = "UploadImageBlobsBulk", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadImageBlobsBulk(System.String) on controller GET_ImageBlob.API.Controllers.ImagesController (GET-ImageBlob.API).
+04-10-2024 14:13:18.747 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+04-10-2024 14:13:18.748 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+04-10-2024 14:13:18.749 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+04-10-2024 14:13:18.751 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+04-10-2024 14:13:18.752 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+04-10-2024 14:13:18.754 +02:00 [DBG] Executing controller factory for controller GET_ImageBlob.API.Controllers.ImagesController (GET-ImageBlob.API)
+04-10-2024 14:13:18.802 +02:00 [DBG] Executed controller factory for controller GET_ImageBlob.API.Controllers.ImagesController (GET-ImageBlob.API)
+04-10-2024 14:13:18.812 +02:00 [DBG] Attempting to bind parameter 'folderPath' of type 'System.String' ...
+04-10-2024 14:13:18.814 +02:00 [DBG] Attempting to bind parameter 'folderPath' of type 'System.String' using the name 'folderPath' in request data ...
+04-10-2024 14:13:18.815 +02:00 [DBG] Done attempting to bind parameter 'folderPath' of type 'System.String'.
+04-10-2024 14:13:18.816 +02:00 [DBG] Done attempting to bind parameter 'folderPath' of type 'System.String'.
+04-10-2024 14:13:18.817 +02:00 [DBG] Attempting to validate the bound parameter 'folderPath' of type 'System.String' ...
+04-10-2024 14:13:18.821 +02:00 [DBG] Done attempting to validate the bound parameter 'folderPath' of type 'System.String'.
+04-10-2024 14:13:55.526 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+04-10-2024 14:13:55.530 +02:00 [INF] Executed action GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlobsBulk (GET-ImageBlob.API) in 36775.6206ms
+04-10-2024 14:13:55.531 +02:00 [INF] Executed endpoint 'GET_ImageBlob.API.Controllers.ImagesController.UploadImageBlobsBulk (GET-ImageBlob.API)'
+04-10-2024 14:13:55.533 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7048/api/Images/bulk/C:\Users\MohamedShil\Desktop\Test - 200 0 null 36825.3348ms

@@ -47,6 +47,11 @@ public class ImageService : IImageService
             Log.Information("Upload finished: {@State}", uploadedBlobState);
         }
     }
+
+    private bool IsValid(string file)
+    {
+        return Path.GetFileName(file).EndsWith("jpg") || Path.GetFileName(file).EndsWith("png") || Path.GetFileName(file).EndsWith("gif");
+    }
         
     public async Task UploadImageBlobsBulk(string folderPath, CancellationToken cancellationToken)
     {
@@ -54,7 +59,7 @@ public class ImageService : IImageService
 
         foreach(var file in Directory.GetFiles(folderPath))
         {
-            if (Path.GetFileName(file).EndsWith("jpg") || Path.GetFileName(file).EndsWith("png"))
+            if (IsValid(file))
             {
                 BlobClient blobClient = blobContainerClient.GetBlobClient(file);
                 FileStream stream = File.OpenRead(file);
