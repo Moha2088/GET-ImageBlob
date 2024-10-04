@@ -16,7 +16,7 @@ public class ImageService : IImageService
     private readonly string _storageConnectionString;
     private readonly string _blobContainer;
     
-    public ImageService() 
+    public ImageService()   
     {
         IConfiguration config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
         _storageConnectionString = config.GetSection("AzureCredentials:StorageConnectionString").Value!;
@@ -48,19 +48,14 @@ public class ImageService : IImageService
         }
     }
 
-    public async Task UploadImageBlobsBulk(string localFilePath, CancellationToken cancellationToken)
+    public async Task UploadImageBlobsBulk(string folderPath, CancellationToken cancellationToken)
     {
         BlobContainerClient blobContainerClient = _blobServiceClient.GetBlobContainerClient(_blobContainer);
-        string fileName = Path.GetFileName(localFilePath);
-        BlobClient blobClient = blobContainerClient.GetBlobClient(fileName);
-                
-        foreach(var file in Directory.GetFiles(localFilePath))
-        {
-            //if (!file.EndsWith(".jpg") || !file.EndsWith(".png"))
-            //{
-            //    continue;
-            //}
 
+
+        foreach(var file in Directory.GetFiles(folderPath))
+        {
+            BlobClient blobClient = blobContainerClient.GetBlobClient(file);
             FileStream stream = File.OpenRead(file);
             await blobClient.UploadAsync(stream, overwrite: true, cancellationToken);
         }
