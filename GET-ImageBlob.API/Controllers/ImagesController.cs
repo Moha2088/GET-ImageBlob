@@ -21,10 +21,10 @@ public class ImagesController : ControllerBase
         return Ok();
     }
 
-    [HttpPost("bulk")]
-    public async Task<IActionResult> UploadImageBlobsBulk(string localFilePath)
+    [HttpPost("bulk/{folderPath}")]
+    public async Task<IActionResult> UploadImageBlobsBulk([FromRoute] string folderPath)
     {
-        await _imageService.UploadImageBlobsBulk(localFilePath, HttpContext.RequestAborted);
+        await _imageService.UploadImageBlobsBulk(folderPath, HttpContext.RequestAborted);
         return Ok();
     }
 
