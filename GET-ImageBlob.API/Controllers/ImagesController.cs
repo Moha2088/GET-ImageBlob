@@ -14,10 +14,17 @@ public class ImagesController : ControllerBase
         _imageService = imageService;
     }
 
-    [HttpPost("upload")]
+    [HttpPost("single/{localFilePath}")]
     public async Task<IActionResult> UploadImageBlob([FromRoute] string localFilePath)
     {
         await _imageService.UploadImageBlob(localFilePath, HttpContext.RequestAborted);
+        return Ok();
+    }
+
+    [HttpPost("bulk")]
+    public async Task<IActionResult> UploadImageBlobsBulk(string localFilePath)
+    {
+        await _imageService.UploadImageBlobsBulk(localFilePath, HttpContext.RequestAborted);
         return Ok();
     }
 

@@ -48,6 +48,24 @@ public class ImageService : IImageService
         }
     }
 
+    public async Task UploadImageBlobsBulk(string localFilePath, CancellationToken cancellationToken)
+    {
+        BlobContainerClient blobContainerClient = _blobServiceClient.GetBlobContainerClient(_blobContainer);
+        string fileName = Path.GetFileName(localFilePath);
+        BlobClient blobClient = blobContainerClient.GetBlobClient(fileName);
+                
+        foreach(var file in Directory.GetFiles(localFilePath))
+        {
+            //if (!file.EndsWith(".jpg") || !file.EndsWith(".png"))
+            //{
+            //    continue;
+            //}
+
+            FileStream stream = File.OpenRead(file);
+            await blobClient.UploadAsync(stream, overwrite: true, cancellationToken);
+        }
+    }
+
     public Task<string> GetImageBlob()
     {
         Random random = new Random();
