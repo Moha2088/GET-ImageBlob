@@ -1,4 +1,5 @@
-﻿using GET_ImageBlob.Services.Services.Interfaces;
+﻿using Azure;
+using GET_ImageBlob.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -39,5 +40,12 @@ public class ImagesController : ControllerBase
                 <img src='{imageURL}'/>   
             </body>
         </html>", "text/html");
+    }
+
+    [HttpDelete("{blobName}")]
+    public async Task<IActionResult> DeleteBlob([FromRoute] string blobName)
+    {
+        var response = await _imageService.DeleteBlob(blobName, HttpContext.RequestAborted);
+        return Ok(response);
     }
 }

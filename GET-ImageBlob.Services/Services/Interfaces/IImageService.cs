@@ -1,4 +1,5 @@
 ﻿
+using Azure;
 using Azure.Storage.Blobs.Models;
 
 namespace GET_ImageBlob.Services.Services.Interfaces;
@@ -13,4 +14,6 @@ public interface IImageService
     /// <param name="localFilePath">The path to the folder with the images</param>
     /// <param name="cancellationToken"></param>
     public Task UploadImageBlobsBulk(string localFilePath, CancellationToken cancellationToken);
+
+    public Task<Response<bool>> DeleteBlob(string blobName, CancellationToken cancellationToken);
 }

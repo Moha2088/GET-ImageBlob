@@ -78,4 +78,12 @@ public class ImageService : IImageService
         Log.Information("Retrieved URL: {@URL}", imageURL);
         return Task.FromResult(imageURL);
     }
+
+    public async Task<Response<bool>> DeleteBlob(string blobName, CancellationToken cancellationToken)
+    {
+        BlobContainerClient blobContainerClient = _blobServiceClient.GetBlobContainerClient(_blobContainer);
+        BlobClient blobClient = blobContainerClient.GetBlobClient(blobName);
+        var response = await blobClient.DeleteIfExistsAsync(cancellationToken:cancellationToken, snapshotsOption: DeleteSnapshotsOption.IncludeSnapshots);
+        return response;
+    }
 }
