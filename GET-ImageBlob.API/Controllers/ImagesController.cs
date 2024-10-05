@@ -32,14 +32,23 @@ public class ImagesController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetImage()
     {
-        var imageURL = await _imageService.GetImageBlob();
-        return Content($@"
+        try
+        {
+            var imageURL = await _imageService.GetImageBlob();
+            return Content($@"
         <html>
             <body>
                 <p>Here is your stored blob!</p>
                 <img src='{imageURL}'/>   
             </body>
         </html>", "text/html");
+            
+        }
+        
+        catch (ArgumentOutOfRangeException)
+        {
+            return NotFound("No blobs found in this container");
+        }
     }
 
     [HttpDelete("{blobName}")]

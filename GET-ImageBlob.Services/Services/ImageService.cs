@@ -26,6 +26,7 @@ public class ImageService : IImageService
 
     public async Task UploadImageBlob(string localFilePath, CancellationToken cancellationToken)
     {
+        localFilePath = localFilePath.Replace('"', ' ').Trim();
         BlobContainerClient blobContainerClient = _blobServiceClient.GetBlobContainerClient(_blobContainer);
         string fileName = Path.GetFileName(localFilePath);
         BlobClient blobClient = blobContainerClient.GetBlobClient(fileName);
@@ -55,16 +56,15 @@ public class ImageService : IImageService
         
     public async Task UploadImageBlobsBulk(string folderPath, CancellationToken cancellationToken)
     {
+        folderPath = folderPath.Replace('"', ' ').Trim();
         BlobContainerClient blobContainerClient = _blobServiceClient.GetBlobContainerClient(_blobContainer);
 
         foreach(var file in Directory.GetFiles(folderPath))
         {
-            if (IsValid(file))
-            {
-                BlobClient blobClient = blobContainerClient.GetBlobClient(file);
-                FileStream stream = File.OpenRead(file);
-                await blobClient.UploadAsync(stream, overwrite: true, cancellationToken);
-            }
+            if (!IsValid(file)) continue;
+            BlobClient blobClient = blobContainerClient.GetBlobClient(file);
+            FileStream stream = File.OpenRead(file);
+            await blobClient.UploadAsync(stream, overwrite: true, cancellationToken);
         }
     }
 
@@ -82,7 +82,10 @@ public class ImageService : IImageService
     public async Task<Response<bool>> DeleteBlob(string blobName, CancellationToken cancellationToken)
     {
         BlobContainerClient blobContainerClient = _blobServiceClient.GetBlobContainerClient(_blobContainer);
-        BlobClient blobClient = blobContainerClient.GetBlobClient(blobName);
+        var name = blobContainerClient.GetBlobs()
+            .SingleOrDefault(blob => blob.Name.StartsWith(blobName))?.Name;
+        
+        BlobClient blobClient = blobContainerClient.GetBlobClient(name);
         var response = await blobClient.DeleteIfExistsAsync(cancellationToken:cancellationToken, snapshotsOption: DeleteSnapshotsOption.IncludeSnapshots);
         return response;
     }
